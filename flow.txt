@@ -1,0 +1,37 @@
+admin->login->manage catgeory 
+admin->login->manage article status
+admin->login->view contacts / users
+logout
+
+
+
+user -> regitser -> login
+--- profile
+--- password
+--- add article
+--- view article
+--- delete article
+--- edit article * 1
+
+---------------------
+Website  (visitor)
+
+-- category Wise  * 2
+-- articles * 3 
+--- post *4 
+--= news - public api  *5 
+--- home [news , articles] *6 
+
+--- about 
+--- contact 
+
+
+
+
+--
+
+articles.comp.ts 
+
+blog
+home
+header

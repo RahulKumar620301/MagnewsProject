@@ -1,0 +1,35 @@
+<div class="container pt-5">
+<div class="row justify-content-center">
+<div class="col-10">
+<h3>Add New Article</h3>
+<form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+<div class="mb-3">
+	<label>Post Title</label>
+<input formControlName="title" type="text" placeholder="Enter Article Title" class="form-control">
+</div>
+<div class="row">
+<div class="mb-3 col-6">
+	<label>Choose Image</label>
+<input (change)="onFileSelect($event)" type="file" class="form-control">
+</div>
+<div class="mb-3 col-6">
+	<label>Select Category</label>
+<select formControlName="category" class="form-control">
+	<option *ngFor="let d of data">{{d.title}}</option>
+</select>
+</div>
+</div>
+<div class="mb-3">
+	<label>Content</label>
+<angular-editor formControlName="content" [config]="editorConfig"></angular-editor>
+</div>
+
+<div class="mb-3">
+<button class="btn btn-outline-success btn-lg w-100 mt-3" [disabled]="!articleForm.valid">Save Article</button>
+</div>
+</form>
+<div class="bg-light border p-3" *ngIf="msg!=''"><p class="text-warning fw-bold">{{msg}}</p></div>
+
+</div>
+</div>
+</div>

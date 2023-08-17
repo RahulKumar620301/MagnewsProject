@@ -1,0 +1,30 @@
+<div class="bg-secondary p-5">
+<div class="container pt-5 pb-5">
+<div class="row justify-content-center ">
+<div class="col-6 bg-white p-5 mt-4">
+<p class="text-success display-6 text-center mb-3">Enter Your New Password</p>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+<div class="mb-3 mt-4">
+
+<input formControlName="code" type="text" placeholder="Enter Code" class="form-control">
+</div>
+<div class="mb-3">
+<input formControlName="password" type="password" placeholder="Enter Password" class="form-control">
+</div>
+<div class="mb-3">
+<input formControlName="rpassword" type="password" placeholder="Retype Password" class="form-control">
+</div>
+<div class="mb-3">
+<button class="btn btn-outline-success btn-lg w-100 mt-3" [disabled]="!userForm.valid">Change Password</button>
+
+</div>
+</form>
+<div class="bg-light border p-3" *ngIf="msg!=''"><p class="text-warning fw-bold">{{msg}}</p></div>
+
+<p class="mt-5 mb-5 text-center">Login Your Account<a href="/user/login" class="text-decoration-none"> Sign In</a></p>
+
+
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,33 @@
+<div class="container pt-5">
+<div class="row justify-content-center">
+<div class="col-5">
+<h3>Add New Category</h3>
+<form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+<div class="mb-3">
+<input formControlName="title" type="text" placeholder="Enter Category Name" class="form-control">
+</div>
+<div class="mb-3">
+<input (change)="onFileSelect($event)" type="file" class="form-control">
+</div>
+<div class="mb-3">
+<button class="btn btn-outline-success btn-lg w-100 mt-3" [disabled]="!categoryForm.valid">Save Category</button>
+</div>
+</form>
+<div class="bg-light border p-3" *ngIf="msg!=''"><p class="text-warning fw-bold">{{msg}}</p></div>
+
+</div>
+<div class="col-6">
+<h3>Categories</h3>
+<table class="table table-bordered table-striped table-hover">
+<tr><th>Image</th><th>Title</th><th>Action</th></tr>
+<tr *ngFor="let d of data">
+<td><img [src]="d.image" width="80px" height="80px"></td>
+<td>{{d.title}}</td>
+<td>
+<button class="btn btn-danger bg-danger btn-sm "
+ (click)="del(d._id)">Delete</button></td>
+</tr>
+</table>
+</div>
+</div>
+</div>

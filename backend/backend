@@ -1,0 +1,12 @@
+backend
+init
+install packeges(npm i pn)
+model
+index
+routes
+
+
+
+
+
+routes= get,patch , put etc

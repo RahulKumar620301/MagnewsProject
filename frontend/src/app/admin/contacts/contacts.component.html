@@ -1,0 +1,19 @@
+<div class="container pt-5">
+	<div class="row justify-content-center">
+		<div class="col-10">
+				<h3> Web Messages </h3><hr>
+
+				<table class="table table-bordered table-striped table-hover">
+					<tr><th>Name</th><th>Contcat Detail</th><th>Message</th>
+						<th>Date</th></tr>
+					<tr *ngFor="let d of data">
+						<td>{{d.firstName}} {{d.lastName}}</td>
+						<td>{{d.emailId}} <br> {{d.phoneNo}}</td>
+						<td>{{d.message}} </td> 
+						<td>{{d.date | date}}</td>
+						</tr>
+				</table>
+
+		</div>
+	</div>
+</div>

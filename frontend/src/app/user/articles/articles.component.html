@@ -1,0 +1,23 @@
+<div class="container pt-5">
+	<div class="row justify-content-center">
+		<div class="col-10">
+				<h3> Articles</h3><hr>
+
+				<table class="table table-bordered table-striped table-hover">
+					<tr><th>Image</th><th>Title</th><th>Category</th>
+						<th>Status</th><th>Date</th><th>Action</th><th>Delete</th></tr>
+					<tr *ngFor="let d of data">
+						<td><img [src]="d.image" height="100px" width="100px"></td>
+						<td class="w-50">{{d.title}} </td>
+						<td>{{d.category}}</td>
+						<td>{{d.status}}</td>
+						<td> {{d.date | date}}</td>
+						<td><a class="btn btn-danger bg-warning btn-sm" [routerLink]="['/user/editarticle',d._id]">Edit</a></td>
+						<td>
+						<button class="btn btn-danger bg-danger btn-sm " (click)="del(d._id)">Delete</button></td>
+						</tr>
+				</table>
+
+		</div>
+	</div>
+</div>
